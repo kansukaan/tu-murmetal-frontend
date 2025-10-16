@@ -1,3 +1,22 @@
+/* Mobile: show service texts above videos */
+@media (max-width: 640px) {
+  .services .service-card {
+    display: flex;
+    flex-direction: column;
+  }
+  .services .service-content {
+    order: -1; /* move text above video */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+/* Ensure service descriptions are visible on mobile */
+@media (max-width: 768px) {
+  .services .service-card .service-content p {
+    display: block !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;

@@ -4,17 +4,17 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: '',
-      title: 'Sanayi Borular',
-      description: '',
-      features: [],
-      video: '/images/Üretimden_Çıkmış_Boru_Videosu.mp4'
-    },
-    {
-      icon: '',
       title: 'Sandviç Panel',
       description: 'Beyaz, bordo ve isteğe bağlı renk seçenekleri mevcuttur.',
       features: [],
       video: '/images/Gerçekçi_Sandviç_Panel_Videosu.mp4'
+    },
+    {
+      icon: '',
+      title: 'Sanayi Borular',
+      description: '',
+      features: [],
+      video: '/images/Üretimden_Çıkmış_Boru_Videosu.mp4'
     },
     {
       icon: '',

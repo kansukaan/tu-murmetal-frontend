@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>TIMUR METAL İLE<br />SANAYİDE GÜÇ</h1>
+            <h1>TİMUR METAL İLE<br />SANAYİDE GÜÇ</h1>
             <p>Sanayi boruları, profiller, sandviç paneller ve sac gruplarında geniş stok, hızlı teslimat ve uzman destek.</p>
             
             <div className="hero-badges">
