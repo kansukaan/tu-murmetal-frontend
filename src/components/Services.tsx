@@ -12,7 +12,7 @@ const Services: React.FC = () => {
     {
       icon: '',
       title: 'Sandviç Panel',
-      description: '',
+      description: 'Beyaz, bordo ve isteğe bağlı renk seçenekleri mevcuttur.',
       features: [],
       video: '/images/Gerçekçi_Sandviç_Panel_Videosu.mp4'
     },
