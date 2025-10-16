@@ -11,6 +11,8 @@ const Hero: React.FC = () => {
           muted 
           loop 
           playsInline
+          preload="metadata"
+          poster="/images/steel-industry1.jpg"
           className="hero-video-element"
         >
           <source src="/images/Kaynakçı_Videosu_İsteği_ve_Oluşturulması.mp4" type="video/mp4" />

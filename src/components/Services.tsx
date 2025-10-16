@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 const Services: React.FC = () => {
   const services = [
@@ -25,6 +25,35 @@ const Services: React.FC = () => {
     }
   ]
 
+  const containerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const videos = Array.from(container.querySelectorAll('video'))
+    const onIntersect: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+        const vid = entry.target as HTMLVideoElement
+        if (entry.isIntersecting) {
+          // Start loading source lazily when in view
+          const source = vid.querySelector('source') as HTMLSourceElement | null
+          if (source && source.dataset.src && source.src !== source.dataset.src) {
+            source.src = source.dataset.src
+            vid.load()
+          }
+          vid.play().catch(() => {})
+        } else {
+          vid.pause()
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(onIntersect, { rootMargin: '200px 0px', threshold: 0.1 })
+    videos.forEach((v) => observer.observe(v))
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className="services" id="services">
       <div className="container">
@@ -32,18 +61,19 @@ const Services: React.FC = () => {
           <h2>HİZMETLERİMİZ</h2>
         </div>
         
-        <div className="services-grid">
+        <div className="services-grid" ref={containerRef}>
           {services.map((service, index) => (
             <div key={index} className="service-card">
               <div className="service-video">
                 <video 
-                  autoPlay 
                   muted 
                   loop 
                   playsInline
+                  preload="none"
+                  poster="/images/steel-industry1.jpg"
                   className="service-video-element"
                 >
-                  <source src={service.video} type="video/mp4" />
+                  <source data-src={service.video} type="video/mp4" />
                 </video>
                 <div className="service-video-overlay"></div>
               </div>
