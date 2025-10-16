@@ -238,23 +238,25 @@ const AdminPanel: React.FC = () => {
 
   const handleEdit = (item: Product | Category, type: 'product' | 'category') => {
     if (type === 'product') {
-      setEditingProduct(item as Product)
+      const product = item as Product
+      setEditingProduct(product)
       setProductForm({
-        title: item.title,
-        description: item.description,
-        category: item.category,
-        badge: item.badge,
-        rating: item.rating,
-        image: item.image
+        title: product.title,
+        description: product.description,
+        category: product.category,
+        badge: product.badge,
+        rating: product.rating,
+        image: product.image
       })
       setShowProductForm(true)
     } else {
-      setEditingCategory(item as Category)
+      const category = item as Category
+      setEditingCategory(category)
       setCategoryForm({
-        name: item.name,
-        description: item.description,
-        icon: item.icon,
-        color: item.color
+        name: category.name,
+        description: category.description,
+        icon: category.icon,
+        color: category.color
       })
       setShowCategoryForm(true)
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from '../context/ThemeContext'
 
 const ThemeToggle: React.FC = () => {
-  const { theme, setTheme, isDark } = useTheme()
+  const { theme, setTheme } = useTheme()
 
   const handleToggle = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light'

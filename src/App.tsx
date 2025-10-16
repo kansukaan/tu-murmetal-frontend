@@ -13,7 +13,7 @@ import { useState } from 'react'
 function App() {
   const [selectedCategory] = useState<string | undefined>(undefined)
   const [searchQuery, setSearchQuery] = useState<string>('')
-  const [showAdmin, setShowAdmin] = useState(false)
+  // removed unused admin state
 
   // Check if admin panel should be shown
   const isAdminRoute = window.location.pathname === '/admin'
